@@ -4,7 +4,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS = srcs/ft*.c
-OBJS = $(SRCS: %.c=%.o)
+OBJS = $(SRCS:.c=.o)
 
 
 all: $(NAME)
@@ -22,3 +22,5 @@ fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
