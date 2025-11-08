@@ -1,12 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aarab <aarab@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 17:33:36 by aarab             #+#    #+#             */
-/*   Updated: 2025/11/07 17:33:37 by aarab            ###   ########.fr       */
+/*   Created: 2025/11/07 17:33:39 by aarab             #+#    #+#             */
+/*   Updated: 2025/11/07 17:33:40 by aarab            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+void * ft_memchr( const void * s1, int searchedChar, size_t size )
+{
+    size_t i;
+    unsigned char *str;
+
+    str = (unsigned char *)s1;
+    i = 0;
+    while (i < size)
+    {
+        if (str[i] == (unsigned char)searchedChar)
+        {
+            return (&ptr[i]);
+        }
+        i++;
+    }
+    return (NULL);
+}

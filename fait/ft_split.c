@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ischar(char s, char c)
+static int	ischar(char s, char c)
 {
 	if (s == c)
 	{
