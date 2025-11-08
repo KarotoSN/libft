@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aarab <aarab@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 17:36:40 by aarab             #+#    #+#             */
-/*   Updated: 2025/11/07 17:36:41 by aarab            ###   ########.fr       */
+/*   Created: 2025/11/07 16:31:16 by aarab             #+#    #+#             */
+/*   Updated: 2025/11/07 16:57:19 by aarab            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp( const char *str1, const char *str2, size_t length )
+void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*str;
 
+	str = (unsigned char *)s;
 	i = 0;
-	while (str1[i] == str2[i] && i < length)
+	while (i < n)
 	{
+		str[i] = 0;
 		i++;
 	}
-	return (str1[i] - str2[i]);
 }
+
+/*
+#include <stdio.h>
+int main()
+{
+	char a[10] = "chainsaw man";
+	printf("%s \n", a);
+	ft_bzero(a, 10);
+	printf("%s \n", a);	
+}*/

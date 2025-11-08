@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/08 00:29:28 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/08 00:29:28 by marvin           ###   ########.fr       */
+/*   Created: 2025/11/08 11:26:05 by marvin            #+#    #+#             */
+/*   Updated: 2025/11/08 11:26:05 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char * ft_strchr( const char *s1, int c )
+void *ft_calloc( size_t elementCount, size_t elementSize)
 {
-    size_t i;
+    unsigned char *str;
 
-    i = 0;
-    while (s1[i])
-    {
-        if (s1[i] == (char)c)
-        {
-            return ((char *)&s1[i]);
-        }
-        i++;
-    }
-    if (!c)
-    {
-        return ((char *)s1);
-    }
-    return (NULL);
+    str = malloc(elementCount * elementSize);
+    if (!str)
+        return (NULL);
+    ft_bzero(str, elementCount * elementSize);
+    return ((void *)str);
 }

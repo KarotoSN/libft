@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aarab <aarab@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 17:33:39 by aarab             #+#    #+#             */
-/*   Updated: 2025/11/07 17:33:40 by aarab            ###   ########.fr       */
+/*   Created: 2025/11/07 17:37:22 by aarab             #+#    #+#             */
+/*   Updated: 2025/11/07 17:37:23 by aarab            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void * ft_memchr( const void * s1, int searchedChar, size_t size )
-{
-    size_t i;
-    unsigned char *str;
+#include "libft.h"
 
-    str = (unsigned char *)s1;
-    i = 0;
-    while (i < size)
-    {
-        if (str[i] == (unsigned char)searchedChar)
-        {
-            return (&ptr[i]);
-        }
-        i++;
-    }
-    return (NULL);
+char	*ft_strrchr(const char *s, int charset)
+{
+	int	i;
+
+	if(!s || !charset)
+		return (0);
+	i = 0;
+	while (s[i])
+		i++;
+	i--;
+	while (i >= 0)
+	{
+		if (s[i] == charset)
+			return ((char *)(s + i));
+		i--;
+	}
+	return (0);
 }

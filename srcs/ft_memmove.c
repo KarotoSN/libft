@@ -1,48 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aarab <aarab@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 16:31:12 by aarab             #+#    #+#             */
-/*   Updated: 2025/11/07 16:51:24 by aarab            ###   ########.fr       */
+/*   Created: 2025/11/07 17:33:23 by aarab             #+#    #+#             */
+/*   Updated: 2025/11/07 17:33:24 by aarab            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	int i;
-	int sign;
-	int res;
+    size_t i;
+	unsigned char	*dest;
+	const unsigned char	*s;
 
-	i = 0;
-	sign = 1;
-	res = 0;
+    i = 0;
+	if (!dst && !src)
+		return (NULL);
+	dest = (unsigned char *)dst;
+	s = (const unsigned char *)src;
 
-	while (str[i] == 32 || ((str[i] >= 9) && (str[i] <= 13)))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (dest > s)
 	{
-		if (str[i] == '-')
+		while (len > 0)
 		{
-			sign = -sign;
+			len--;
+			dest[len] = s[len];
 		}
-        i++;
 	}
-	while ((str[i] >= '0') && (str[i] <= '9'))
+	else
 	{
-		res = res * 10 + (str[i] - '0');
-        i++;
+		while (i < len)
+		{
+			dest[i] = s[i];
+			i++;
+		}
 	}
-	return (res * sign);
-}
-
-int main()
-{
-    char a[] = "-32446";
-
-    printf("%d", ft_atoi(a));
+	return (dst);
 }

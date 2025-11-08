@@ -1,48 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aarab <aarab@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 17:33:23 by aarab             #+#    #+#             */
-/*   Updated: 2025/11/07 17:33:24 by aarab            ###   ########.fr       */
+/*   Created: 2025/11/07 17:03:09 by aarab             #+#    #+#             */
+/*   Updated: 2025/11/07 17:04:39 by aarab            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memmove( void *dest, const void *src, size_t size )
+char	*ft_strdup(const char *s)
 {
-    #include "libft.h"
+	char	*tab;
+	int		i;
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
-{
-    size_t i;
-	unsigned char	*dest;
-	const unsigned char	*s;
-
-    i = 0;
-	if (!dst && !src)
+	i = 0;
+	while (s[i])
+		i++;
+	tab = malloc(sizeof(char) * (i + 1));
+	if (!tab)
 		return (NULL);
-	dest = (unsigned char *)dst;
-	s = (const unsigned char *)src;
-
-	if (dest > s)
+	i = 0;
+	while (s[i])
 	{
-		while (len > 0)
-		{
-			len--;
-			d[len] = s[len];
-		}
+		tab[i] = s[i];
+		i++;
 	}
-	else
-	{
-		while (i < len)
-		{
-			d[i] = s[i];
-			i++;
-		}
-	}
-	return (dst);
+	tab[i] = '\0';
+	return (tab);
 }
