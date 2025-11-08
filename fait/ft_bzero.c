@@ -29,7 +29,7 @@ void	ft_bzero(void *ptn, size_t count)
 #include <stdio.h>
 int main()
 {
-	char a[10] = "012346789";
+	char a[10] = "chainsaw man";
 	printf("%s \n", a);
 	ft_bzero(a, 10);
 	printf("%s \n", a);	
