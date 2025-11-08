@@ -3,7 +3,7 @@ NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = srcs/ft*.c
+SRCS = $(wildcard srcs/*.c)
 OBJS = $(SRCS:.c=.o)
 
 

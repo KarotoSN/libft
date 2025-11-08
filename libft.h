@@ -28,7 +28,7 @@ int		ft_toupper(int c);
 char	*ft_strchr(const char *string, int searchedChar);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_itoa(int n);
-char	*strnstr(const char *big, const char *little, size_t len);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	**ft_split(char const *s, char c);
 
 #endif
