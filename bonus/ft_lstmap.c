@@ -3,19 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aarab <aarab@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 17:23:45 by aarab             #+#    #+#             */
-/*   Updated: 2025/11/08 17:29:22 by aarab            ###   ########.fr       */
+/*   Updated: 2025/11/09 01:47:34 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 
-t_list *ft_lstnew(void *content)
-{
-    t_list New;
 
-    New.content = content;
-    ft_lstnew.next = 
-}

@@ -5,7 +5,10 @@ CFLAGS = -Wall -Wextra -Werror
 INCLUDES = -I.
 
 SRCS = $(wildcard srcs/*.c)
+BONUS_SRCS = $(wildcard bonus/*.c)
+
 OBJS = $(SRCS:.c=.o)
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 all: $(NAME)
 
@@ -23,4 +26,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+bonus: $(OBJS) $(BONUS_OBJS)
+	@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+
+.PHONY: all clean fclean re bonus

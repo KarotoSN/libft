@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aarab <aarab@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 17:26:32 by aarab             #+#    #+#             */
-/*   Updated: 2025/11/08 15:42:56 by aarab            ###   ########.fr       */
+/*   Updated: 2025/11/09 01:25:05 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	intlen(int n)
 
 char	*ft_itoa(int n)
 {
-	int		nbr;
+	long		nbr;
 	int		len;
 	char	*str;
 

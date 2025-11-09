@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aarab <aarab@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 00:29:28 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/08 16:31:34 by aarab            ###   ########.fr       */
+/*   Updated: 2025/11/09 01:03:51 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,15 @@ char	*ft_strchr(const char *s1, int c)
 		}
 		i++;
 	}
+	if ((char)c == '\0')
+		return ((char *)&s1[i]);
 	return (NULL);
 }
+
 /*int	main(void)
 {
 	char	a[] = "Chainsaw man";
 
 	printf("%s\n", ft_strchr(a, 'n'));
-	printf("%s", strchr(a, 'n'));
+	printf("%s\n", strchr(a, 'n'));
 }*/
